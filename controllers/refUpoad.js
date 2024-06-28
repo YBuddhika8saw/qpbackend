@@ -4,6 +4,7 @@ import fs from 'fs';
 import { fileTypeFromBuffer } from 'file-type';
 import multiparty from 'multiparty';
 
+// configure the keys for accessing AWS
 
 
 // create S3 instance
@@ -78,4 +79,15 @@ const showFile = (req, res) => {
   });
 }; 
 
-export { upFile ,showFile}
+
+
+const getSignedUrl = (req,res) => {
+  const key = req.query.key;
+  const params = { Bucket: 'qpaper', Key: key, Expires: 600 }; // Expires in 60 seconds
+  const url = s3.getSignedUrl('getObject', params);
+  return res.send(url);
+};
+
+
+
+export { upFile ,showFile,getSignedUrl}

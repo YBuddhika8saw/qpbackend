@@ -6,7 +6,7 @@ import {
     getSelectedQuestionsSummery, getQuestionMarksBySubjectAreas, getQuestionMarksByDifficultyLevel,getResourcesBySubject,
     addResourcesBySubject,getDistinctResources,addResources
 } from "../controllers/paperController.js";
-import { upFile, showFile } from "../controllers/refUpoad.js";
+import { upFile, showFile, getSignedUrl } from "../controllers/refUpoad.js";
 
 // Route to get subjects info
 router.get('/getSubjectsInfo', getSubjectsInfo);
@@ -45,6 +45,8 @@ router.get('/getResourceFile', showFile);
 // router.post('/addResources', uploadResource.single('file') , addResources);
 
 router.post('/addResources', upFile);
+
+router.get('/getSignedUrl', getSignedUrl);
 
 
 

@@ -1,22 +1,21 @@
 import mysql from 'mysql';
 
 const dbConfig = {
-  host: "localhost",
-  user: "root",
-  password: "password",
-  database: "qpaper"
+  // host: "localhost",
+  // user: "root",
+  // password: "password",
+  // database: "qpaper"
 
   // host: "www.epaper.pixalogy.lk",
   // user: "pixalogy_epaper",
   // password: "h9TZr4M6v-",
   // database: "pixalogy_epaper"
   
-  // host: "qpaperdb.ch6ywumwg06s.us-east-1.rds.amazonaws.com",
-  // user: "admin",
-  // password: "password",
-  // database: "qpaperDB"
+  host: "qpaperdb.ch6ywumwg06s.us-east-1.rds.amazonaws.com",
+  user: "admin",
+  password: "Password",
+  database: "qpaperDB"
 };
-
 // Create a connection pool
 const pool = mysql.createPool(dbConfig);
 
